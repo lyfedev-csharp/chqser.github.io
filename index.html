@@ -2,135 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elysor | Lyfe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset & basics */
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-    body { background: #1a0d2a; color: #eee; line-height: 1.6; scroll-behavior: smooth; }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* Header */
-    header { background: #2e1b4c; padding: 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.5);}
-    header nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
-    header nav a { margin: 0 15px; font-weight: 500; transition: 0.3s; }
-    header nav a:hover { color: #ff9eff; }
-
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #5c2a7d, #2e1b4c); color: #fff; padding: 120px 20px; text-align: center; }
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; color: #d8c1ff; }
-
-    /* Section styling */
-    section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-    h2 { font-size: 2rem; margin-bottom: 40px; text-align: center; color: #ff9eff; }
-
-    /* Grid layout */
-    .grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-
-    /* Cards */
-    .card { background: #2e1b4c; padding: 20px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; opacity: 0; transform: translateY(30px); }
-    .card img { width: 100%; border-radius: 12px; margin-bottom: 15px; transition: transform 0.3s; }
-    .card h3 { margin-bottom: 10px; color: #ffccff; }
-    .card p { font-size: 0.9rem; color: #d8c1ff; }
-
-    .card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
-    .card:hover img { transform: scale(1.05); }
-
-    /* Footer */
-    footer { text-align: center; padding: 40px 20px; background: #2e1b4c; color: #d8c1ff; }
-
-    /* Fade-in animation */
-    .fade-in { animation: fadeInUp 1s forwards; }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive text */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1rem; }
-    }
-  </style>
+  <title>Elysor</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script defer src="/assets/main.js"></script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <div class="logo"><a href="#home">MySite</a></div>
-      <div class="links">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#workers">Workers</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero / Home -->
-  <section class="hero" id="home">
-    <h1>Elysor Products</h1>
-    <p>Elysor Products is a .</p>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products">
-    <h2>Products</h2>
-    <div class="grid">
-      <div class="card fade-in">
-        <img src="elysor logo.png" alt="Gorilla Tag">
-        <h3>Elysor Mod Menu</h3>
-        <p>https://elysor-prods.mysellauth.com/product/elysor-paid</p>
-      </div>
+<header>
+  <nav>
+    <a href="/">Elysor</a>
+    <div>
+      <a href="/products">Products</a>
+      <a href="/about">About</a>
+      <a href="/team">Team</a>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Products</h2>
-    <div class="grid">
-      <div class="card fade-in">
-        <h3>Elysor Mod Menu Details</h3>
-        <p>Elysor Mod Menu is a cheat menu for the VR (Virtual Reality) game Gorilla Tag. It includes Overpowered features such as Lag Mods (Features that can lag other players game), ServerSided Projectile Mods (Features that can Shoot or Spam Projectiles that everyone in your lobby can see).</p>
-      </div>
+<div class="hero">
+  <h1>Elysor Products</h1>
+  <p>High-end Gorilla Tag modifications and tools.</p>
+</div>
+
+<section>
+  <h2>Welcome</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Premium Mods</h3>
+      <p>Powerful, experimental Gorilla Tag tools.</p>
     </div>
-  </section>
-
-  <!-- Workers Section -->
-  <section id="workers">
-    <h2>Team for all Elysor Products</h2>
-    <div class="grid">
-      <div class="card fade-in">
-        <img src="https://via.placeholder.com/250x250/5c2a7d/ffffff?text=Worker+1" alt="Lyfe">
-        <h3>Lyfe</h3>
-        <p>Owner</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://via.placeholder.com/250x250/5c2a7d/ffffff?text=Worker+2" alt="Kante">
-        <h3>Kante</h3>
-        <p>Developer</p>
-      </div>
+    <div class="card">
+      <h3>Trusted Team</h3>
+      <p>Built by experienced developers.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Elysor Products. All rights reserved.</p>
-  </footer>
-
-  <!-- Simple JS to stagger fade-in -->
-  <script>
-    const cards = document.querySelectorAll('.fade-in');
-    cards.forEach((card, i) => {
-      card.style.animationDelay = `${i * 0.2}s`;
-    });
-  </script>
+<footer>© 2026 Elysor Products</footer>
 
 </body>
 </html>
-
-
-
