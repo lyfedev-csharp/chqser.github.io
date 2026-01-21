@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="../assets/style.css">
     
     <style>
-        /* --- EXCLUSIVE REVIEW SLIDER STYLES --- */
-        /* These only apply to this page so nothing else breaks */
-        
         .reviews-wrapper {
             width: 100%;
             max-width: 1400px;
@@ -25,7 +22,7 @@
             overflow-x: auto;
             padding: 20px 0;
             scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Hide scrollbar for Chrome/Safari below */
+            scrollbar-width: none;
             -ms-overflow-style: none;
         }
 
@@ -34,8 +31,8 @@
         }
 
         .review-card-modern {
-            flex: 0 0 350px; /* Width of each card */
-            height: 220px;
+            flex: 0 0 350px;
+            height: 250px;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
             border-radius: 16px;
@@ -46,42 +43,58 @@
             text-decoration: none;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
+            align-items: center;
         }
 
         .review-card-modern:hover {
-            border-color: rgba(255,255,255,0.3);
+            border-color: var(--accent-purple);
             transform: translateY(-5px);
             background: rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .review-img {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
-            opacity: 0.4;
+            opacity: 0.3;
             z-index: 1;
             transition: opacity 0.3s;
         }
 
         .review-card-modern:hover .review-img {
-            opacity: 0.7;
+            opacity: 0.5;
         }
 
-        .review-info {
+        .play-btn-overlay {
             position: relative;
             z-index: 2;
-            padding: 20px;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            background: #fff;
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .review-info h3 {
-            font-size: 1.1rem;
+        .play-btn-overlay i {
+            font-size: 1rem;
+        }
+
+        .review-card-modern:hover .play-btn-overlay {
+            background: var(--accent-purple);
             color: #fff;
-            margin: 0;
+            transform: scale(1.1);
         }
 
-        /* AUTO-SCROLL ANIMATION (Only if > 5 reviews) */
         .auto-scroll-active {
             animation: scrollLoop 30s linear infinite;
             width: max-content;
@@ -102,7 +115,7 @@
     <div class="glow-bg"></div>
 
     <nav>
-        <a href="/" class="logo">Elysor</a>
+        <a href="/" class="logo">ELYSØR</a>
         <div class="nav-links">
             <a href="/products">Products</a>
             <a href="/reviews" style="color: #fff;">Reviews</a>
@@ -113,16 +126,19 @@
     </nav>
 
     <section class="hero">
-        <h1 class="fade-in">Reviews</h1>
-        <p class="subtitle fade-in">Community showcases and feedback from our users.</p>
+        <h1 class="fade-in">Community Reviews</h1>
+        <p class="subtitle fade-in">See what our users are saying about Elysor.</p>
     </section>
 
     <div class="reviews-wrapper fade-in">
         <div class="reviews-container" id="reviewTrack">
-            <a href="https://www.youtube.com/watch?v=CFqOD49Otf4" target="_blank" class="review-card">
-                <img src="https://img.youtube.com/vi/CFqOD49Otf4/mqdefault.jpg" class="review-thumb" alt="Video Review">
-                <div class="play-overlay"><div class="play-icon"></div></div>
-                <div class="review-title">This Menu is ACTUALLY Overpowered... 😳 | ELYSØR Paid Menu | Gorilla Tag Modding</div>
+            
+            <a href="https://www.youtube.com/watch?v=CFqOD49Otf4" target="_blank" class="review-card-modern">
+                <img src="https://img.youtube.com/vi/CFqOD49Otf4/mqdefault.jpg" class="review-img" alt="Thumbnail">
+                
+                <div class="play-btn-overlay">
+                    <span>▶</span> WATCH REVIEW
+                </div>
             </a>
             </div>
     </div>
@@ -135,13 +151,9 @@
         const track = document.getElementById('reviewTrack');
         const cards = track.querySelectorAll('.review-card-modern');
         
-        // If there are more than 5 cards, enable the auto-moving loop
-        if (cards.length > 5) {
-            // Duplicate the cards for a seamless infinite loop
+        if (cards.length > 4) {
             const cardMarkup = track.innerHTML;
             track.innerHTML = cardMarkup + cardMarkup;
-            
-            // Apply the animation class
             track.classList.add('auto-scroll-active');
         }
     </script>
