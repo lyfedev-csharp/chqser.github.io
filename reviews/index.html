@@ -146,16 +146,5 @@
     <footer>© 2026 Elysor Products</footer>
 
     <script src="../assets/main.js"></script>
-
-    <script>
-        const track = document.getElementById('reviewTrack');
-        const cards = track.querySelectorAll('.review-card-modern');
-        
-        if (cards.length > 4) {
-            const cardMarkup = track.innerHTML;
-            track.innerHTML = cardMarkup + cardMarkup;
-            track.classList.add('auto-scroll-active');
-        }
-    </script>
 </body>
 </html>
