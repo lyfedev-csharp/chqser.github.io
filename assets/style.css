@@ -92,20 +92,27 @@ h1 { font-size: 4rem; margin-bottom: 20px; color: #fff; font-weight: 900; letter
 }
 .dot { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88; }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.grid { 
+    display: grid; 
+    grid-template-columns: 1fr;
+    gap: 20px; 
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 .card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     padding: 30px;
     border-radius: 12px;
+    text-align: left;
     transition: 0.3s ease;
-    text-align: center;
 }
 
 .card:hover {
     border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
+    transform: translateX(10px);
 }
 
 .play-btn {
