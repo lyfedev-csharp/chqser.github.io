@@ -27,13 +27,15 @@ body {
 /* --- DYNAMIC MOUSE GLOW --- */
 .glow-bg {
     position: fixed;
-    top: 0; left: 0;
-    width: 600px; height: 600px;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
     background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
     z-index: -1;
     pointer-events: none;
-    transform: translate(-50%, -50%); /* Centers glow on cursor */
-    transition: transform 0.1s ease-out; /* Smooth following */
+    transform: translate(-50%, -50%);
+    will-change: transform;
 }
 
 /* --- NAVIGATION --- */
@@ -57,20 +59,20 @@ h1 { font-size: 4rem; margin-bottom: 20px; font-weight: 900; letter-spacing: -2p
 .subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; line-height: 1.6; }
 
 .status {
-    display: inline-flex; 
-    align-items: center; 
+    display: inline-flex;
+    align-items: center;
     gap: 10px;
-    background: rgba(0, 255, 136, 0.05); 
-    padding: 10px 20px; 
+    background: rgba(0, 255, 136, 0.05);
+    padding: 10px 20px;
     border-radius: 50px;
-    color: var(--status-green); 
-    font-size: 0.85rem; 
+    color: var(--status-green);
+    font-size: 0.85rem;
     font-weight: 700;
-    border: 1px solid rgba(0, 255, 136, 0.1); 
+    border: 1px solid rgba(0, 255, 136, 0.1);
     
-    /* Increased margin-top to move it down slightly */
-    margin-top: 25px; 
-    margin-bottom: 50px; 
+    /* Pushes it down further from the Products/Discord buttons */
+    margin-top: 40px; 
+    margin-bottom: 60px;
 }
 .dot { width: 8px; height: 8px; background: var(--status-green); border-radius: 50%; box-shadow: 0 0 12px var(--status-green); }
 
@@ -116,11 +118,17 @@ h1 { font-size: 4rem; margin-bottom: 20px; font-weight: 900; letter-spacing: -2p
 .play-btn-overlay { position: relative; z-index: 2; background: #fff; color: #000; padding: 12px 24px; border-radius: 50px; font-weight: 800; }
 
 /* --- PRODUCTS --- */
-.product-grid { display: flex; justify-content: center; padding: 60px 20px; }
-.product-card .btn, .product-card .nav-btn {
-    margin-top: 20px;
-    display: inline-block;
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 20px;
+    width: 100%;
 }
+
+.product-card { flex: 0 1 400px; padding: 40px; border-radius: 24px; text-align: center; display: flex; flex-direction: column; align-items: center; background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); }
+.product-card .btn, .product-card .nav-btn { margin-top: 30px; width: 100%; padding: 14px; }
 .product-card img { width: 140px; margin-bottom: 25px; }
 
 /* --- BUTTONS --- */
